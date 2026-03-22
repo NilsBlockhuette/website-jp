@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blockhütte Japan | プレミアムステンレス弁当箱＆ボトル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   BLOCKHÜTTE JAPAN - PRICE CONFIGURATION
+   Edit prices in the JavaScript section below
+   ============================================ */
+
+:root {
+  --bh-green: #2d5016;
+  --bh-green-light: #3a6b1e;
+  --bh-green-dark: #1e3a0e;
+  --bh-cream: #f5f0e8;
+  --bh-cream-dark: #e8e0d0;
+  --bh-white: #ffffff;
+  --bh-black: #1a1a1a;
+  --bh-gray: #666666;
+  --bh-gray-light: #f7f7f7;
+  --bh-red: #c0392b;
+  --bh-gold: #b8860b;
+  --font-main: 'Noto Sans JP', 'Zen Kaku Gothic New', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  color: var(--bh-black);
+  background: var(--bh-white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== ANNOUNCEMENT BAR ===== */
+.announcement-bar {
+  background: var(--bh-green);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--bh-white);
+  border-bottom: 1px solid #eee;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--bh-black);
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bh-green);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--bh-gray);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--bh-black);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav a:hover { color: var(--bh-green); }
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--bh-green);
+  transition: width 0.3s;
+}
+
+nav a:hover::after { width: 100%; }
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 75vh;
+  min-height: 500px;
+  background: linear-gradient(135deg, var(--bh-green-dark) 0%, var(--bh-green) 50%, var(--bh-green-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: white;
+  color: var(--bh-green);
+  padding: 16px 48px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== PRESS BAR ===== */
+.press-bar {
+  background: var(--bh-gray-light);
+  padding: 24px 40px;
+  text-align: center;
+}
+
+.press-bar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bh-gray);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.press-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  opacity: 0.4;
+}
+
+.press-logos span {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ===== CATEGORY TABS ===== */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 20px 20px;
+  flex-wrap: wrap;
+}
+
+.cat-tab {
+  padding: 10px 24px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  color: var(--bh-black);
+}
+
+.cat-tab:hover, .cat-tab.active {
+  background: var(--bh-green);
+  color: white;
+  border-color: var(--bh-green);
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+  text-align: center;
+  padding: 50px 20px 10px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  font-size: 15px;
+  color: var(--bh-gray);
+  font-weight: 400;
+}
+
+/* ===== PRODUCT GRID ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 30px 40px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.product-image {
+  position: relative;
+  padding-top: 100%;
+  background: var(--bh-gray-light);
+  overflow: hidden;
+}
+
+.product-image img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.badge-sold-out {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--bh-black);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.badge-sale {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--bh-red);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.product-info .subtitle {
+  font-size: 13px;
+  color: var(--bh-gray);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.product-prices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-current {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--bh-green);
+}
+
+.price-original {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-sizes {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--bh-gray);
+}
+
+.sold-out-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  background: #e0e0e0;
+  color: #999;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: not-allowed;
+  font-family: var(--font-main);
+  letter-spacing: 1px;
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  background: var(--bh-cream);
+  padding: 70px 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-4px); }
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--bh-gray);
+  line-height: 1.8;
+}
+
+/* ===== GRAVUR / ENGRAVING SECTION ===== */
+.engraving-section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.engraving-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.engraving-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--bh-green);
+}
+
+.engraving-card .engraving-content {
+  padding: 30px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.engraving-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.engraving-card p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ===== SUSTAINABILITY ===== */
+.sustainability {
+  background: var(--bh-green-dark);
+  color: white;
+  padding: 80px 40px;
+}
+
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sus-card {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+}
+
+.sus-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.sus-card p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.sus-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--bh-black);
+  color: white;
+  padding: 60px 40px 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.footer-col a {
+  display: block;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: white; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-contact {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ===== REVIEWS ===== */
+.reviews-section {
+  padding: 60px 40px;
+  background: var(--bh-gray-light);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.review-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.review-stars { color: var(--bh-gold); font-size: 16px; margin-bottom: 12px; }
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.review-author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bh-gray);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .header { padding: 12px 20px; }
+  nav { display: none; }
+  .hero h1 { font-size: 32px; }
+  .hero { min-height: 400px; height: 60vh; }
+  .product-grid { padding: 20px; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .engraving-grid { grid-template-columns: 1fr; }
+  .features { padding: 40px 20px; }
+  .sustainability { padding: 40px 20px; }
+  .section-title h2 { font-size: 24px; }
+  .footer { padding: 40px 20px 20px; }
+}
+
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: 1fr; max-width: 400px; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card { animation: fadeInUp 0.6s ease-out backwards; }
+.product-card:nth-child(1) { animation-delay: 0.05s; }
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.15s; }
+.product-card:nth-child(4) { animation-delay: 0.2s; }
+.product-card:nth-child(5) { animation-delay: 0.25s; }
+.product-card:nth-child(6) { animation-delay: 0.3s; }
+.product-card:nth-child(7) { animation-delay: 0.35s; }
+.product-card:nth-child(8) { animation-delay: 0.4s; }
+
+.feature-card { animation: fadeInUp 0.6s ease-out backwards; }
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+  🇯🇵 日本のお客様へ — 現在、全商品の在庫を準備中です。お問い合わせは info@blockhuette.net まで
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#" class="logo">
+    <div class="logo-icon">B</div>
+    <div>
+      <div class="logo-text">Blockhütte</div>
+      <div class="logo-sub">Japan</div>
+    </div>
+  </a>
+  <nav>
+    <a href="#products">商品一覧</a>
+    <a href="#bottles">ボトル</a>
+    <a href="#lunchbox">弁当箱</a>
+    <a href="#bundles">セット</a>
+    <a href="#engraving">名入れ</a>
+    <a href="pages/about.html">私たちについて</a>
+    <a href="pages/contact.html">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌿 ドイツ発 — サステナブルな暮らしのために</div>
+    <h1>プレミアム ステンレス<br>弁当箱＆ボトル</h1>
+    <p>高品質なステンレス製品で、毎日をもっとサステナブルに。<br>ドイツ・パーダーボルンからお届けする、長持ちするデザイン。</p>
+    <a href="#products" class="hero-btn">商品を見る</a>
+  </div>
+</section>
+
+<!-- PRESS BAR -->
+<div class="press-bar">
+  <div class="press-bar-label">メディア掲載実績</div>
+  <div class="press-logos">
+    <span>Amazon</span>
+    <span>Bergwelten</span>
+    <span>Myself</span>
+    <span>HörZu</span>
+    <span>Stern</span>
+    <span>2DF</span>
+    <span>Welt</span>
+  </div>
+</div>
+
+<!-- CATEGORY TABS -->
+<div class="category-tabs" id="products">
+  <div class="cat-tab active" onclick="filterProducts('all', this)">すべて</div>
+  <div class="cat-tab" onclick="filterProducts('bestseller', this)">ベストセラー</div>
+  <div class="cat-tab" onclick="filterProducts('bottle', this)">ボトル</div>
+  <div class="cat-tab" onclick="filterProducts('lunchbox', this)">弁当箱</div>
+  <div class="cat-tab" onclick="filterProducts('thermo', this)">サーモ容器</div>
+  <div class="cat-tab" onclick="filterProducts('bundle', this)">セット</div>
+  <div class="cat-tab" onclick="filterProducts('engraving', this)">名入れ</div>
+</div>
+
+<!-- BESTSELLER SECTION -->
+<div class="section-title">
+  <h2>人気商品</h2>
+  <p>お客様に愛されている、Blockhütteのベストセラー</p>
+</div>
+
+<!-- PRODUCT GRID (generated by JS) -->
+<div class="product-grid" id="product-grid"></div>
+
+<!-- ENGRAVING SECTION -->
+<section class="engraving-section" id="engraving">
+  <div class="section-title" style="padding: 0 0 10px;">
+    <h2>あなただけの名入れ</h2>
+    <p>ドイツ製の高精度レーザー刻印で、あなただけの一品に</p>
+  </div>
+  <div class="engraving-grid">
+    <div class="engraving-card" style="background: linear-gradient(135deg, #2d5016, #3a6b1e);">
+      <div class="engraving-content">
+        <h3>🔥 高品質レーザー刻印</h3>
+        <p>超強力レーザーで製造。Blockhütteは長持ちする高品質をお約束します。</p>
+      </div>
+    </div>
+    <div class="engraving-card" style="background: linear-gradient(135deg, #1e3a0e, #2d5016);">
+      <div class="engraving-content">
+        <h3>✨ 自由なデザイン</h3>
+        <p>4つのポジションと2つのフォントから選べます。あなただけのユニークな一品を。</p>
+      </div>
+    </div>
+    <div class="engraving-card" style="background: linear-gradient(135deg, #3a6b1e, #4a8b2e);">
+      <div class="engraving-content">
+        <h3>🎁 最高のプレゼント</h3>
+        <p>大切な人への贈り物に。手作りのパーソナルギフトは、いつだって一番素敵です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-title" style="padding: 0 0 40px;">
+    <h2>Blockhütteを選ぶ理由</h2>
+    <p>お客様のメリット</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <h3>全商品3年保証</h3>
+      <p>すべての製品に3年間の保証付き。何かお困りのことがあれば、メール・お問い合わせフォーム・お電話でお気軽にご連絡ください。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🚚</div>
+      <h3>安心の配送</h3>
+      <p>高品質な梱包と信頼できる配送パートナーで、商品を安全にお届けします。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💳</div>
+      <h3>安全なお支払い</h3>
+      <p>PayPal、Apple Pay、クレジットカードなど、多様な決済方法に対応。安心・安全にお買い物いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="section-title" style="padding: 0 0 10px;">
+    <h2>お客様の声</h2>
+    <p>Blockhütte製品をご愛用いただいているお客様のレビュー</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">「ステンレス弁当箱の品質に驚きました。とても頑丈で、毎日使っていますが全く問題ありません。プラスチックから卒業できて本当に嬉しいです。」</div>
+      <div class="review-author">— Amazonレビューより</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">「トリンクフラッシェ（ボトル）は保温・保冷性能が素晴らしい。朝入れたコーヒーが夕方まで温かいです。デザインもシンプルで気に入っています。」</div>
+      <div class="review-author">— 786件のレビューより</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">「名入れサービスを利用しました。友人へのプレゼントに最適でした。レーザー刻印のクオリティが高く、とても喜ばれました。」</div>
+      <div class="review-author">— お客様レビューより</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="sustainability" id="about">
+  <div class="section-title" style="padding: 0 0 40px;">
+    <h2 style="color: white;">サステナビリティへの取り組み</h2>
+    <p style="color: rgba(255,255,255,0.7);">Blockhütteが大切にしていること</p>
+  </div>
+  <div class="sustainability-grid">
+    <div class="sus-card">
+      <div class="sus-icon">🌍</div>
+      <h3>気候保護への貢献</h3>
+      <p>すべての製品は超長寿命で、気候保護に貢献しています。排出量を相殺する3つのプロジェクトを支援しています。</p>
+    </div>
+    <div class="sus-card">
+      <div class="sus-icon">📦</div>
+      <h3>エコフレンドリーな配送</h3>
+      <p>DHL GoGreenと緊密に連携し、気候に配慮した最速の配送を実現しています。</p>
+    </div>
+    <div class="sus-card">
+      <div class="sus-icon">🔄</div>
+      <h3>60日間お試し</h3>
+      <p>製品との相性を確かめるため、60日間のお試し期間を設けています。もし気に入らなければ、無料で返品できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>ヘルプ＆お問い合わせ</h4>
+      <a href="pages/contact.html">お問い合わせ</a>
+      <a href="pages/shipping.html">配送について</a>
+      <a href="pages/returns.html">返品・返金ポリシー</a>
+      <a href="pages/warranty.html">保証条件</a>
+      <div class="footer-contact" style="margin-top: 16px;">
+        ✉️ <a href="mailto:info@blockhuette.net">info@blockhuette.net</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>商品カテゴリー</h4>
+      <a href="#products" onclick="filterProducts('bundle', document.querySelector('[onclick*=bundle]'))">セット商品</a>
+      <a href="#products" onclick="filterProducts('lunchbox', document.querySelector('[onclick*=lunchbox]'))">弁当箱・ランチボックス</a>
+      <a href="#products" onclick="filterProducts('bottle', document.querySelector('[onclick*=bottle]'))">ボトル</a>
+      <a href="#products" onclick="filterProducts('thermo', document.querySelector('[onclick*=thermo]'))">サーモランチボックス</a>
+      <a href="#products" onclick="filterProducts('engraving', document.querySelector('[onclick*=engraving]'))">名入れ商品</a>
+    </div>
+    <div class="footer-col">
+      <h4>会社情報</h4>
+      <a href="pages/about.html">私たちについて</a>
+      <a href="pages/vision.html">ビジョン</a>
+      <a href="pages/tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="pages/terms.html">利用規約</a>
+      <a href="pages/privacy.html">プライバシーポリシー</a>
+    </div>
+    <div class="footer-col">
+      <h4>フォローする</h4>
+      <a href="https://www.facebook.com/TeamBlockhuette/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/blockhuette/" target="_blank">Instagram</a>
+      <p style="margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.5);">13,769 フォロワー</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Designed with ❤️ in Paderborn — © Blockhütte GmbH — 日本語版
+  </div>
+</footer>
+
+<script>
+/* ================================================================
+   🔧 PRICE CONFIGURATION — EDIT PRICES HERE
+   ================================================================
+   Each product has:
+   - price: current selling price (string, e.g. "¥4,280")
+   - originalPrice: original price before discount (string or null)
+   - All products are marked as "売り切れ" (sold out)
+   ================================================================ */
+
+const PRODUCTS = [
+  // ===== BESTSELLER / HAUPTPRODUKTE =====
+  {
+    id: 'brotdose-1400',
+    name: 'プレミアム ステンレス弁当箱',
+    subtitle: '最大3つのフレキシブル仕切り付き',
+    price: '¥4,280',
+    originalPrice: '¥4,430',
+    category: ['bestseller', 'lunchbox'],
+    sizes: '800ml / 1200ml / 1400ml',
+    image: 'images/brotdose-1400.jpg',
+  },
+  {
+    id: 'trinkflasche-isoliert',
+    name: 'プレミアム ステンレス保温ボトル',
+    subtitle: '冒険のお供にアイスコールド',
+    price: '¥3,290',
+    originalPrice: '¥3,510',
+    category: ['bestseller', 'bottle'],
+    sizes: '500ml / 750ml / 1000ml',
+    image: 'images/trinkflasche.jpg',
+  },
+  {
+    id: 'thermobehaelter',
+    name: 'ステンレス サーモ容器（真空バルブ付き）',
+    subtitle: '熱いも冷たいもお任せ！',
+    price: '¥4,280',
+    originalPrice: '¥4,430',
+    category: ['bestseller', 'thermo'],
+    sizes: '530ml / 700ml / 1000ml',
+    image: 'images/thermobehaelter.jpg',
+  },
+  {
+    id: 'sport-trinkflasche',
+    name: 'プレミアム ステンレス スポーツボトル',
+    subtitle: 'スタイリッシュ＆スリム ワンハンドクリック式',
+    price: '¥3,720',
+    originalPrice: '¥4,280',
+    category: ['bestseller', 'bottle'],
+    sizes: '350ml / 500ml / 750ml / 1000ml',
+    image: 'images/sport-trinkflasche.jpg',
+  },
+
+  // ===== BUNDLES / SETS =====
+  {
+    id: 'abenteuer-bundle',
+    name: 'アドベンチャーセット（弁当箱＋ボトル）',
+    subtitle: '次の冒険にぴったりのセット',
+    price: '¥6,350',
+    originalPrice: '¥7,940',
+    category: ['bundle'],
+    sizes: '弁当箱1400ml + ボトル500ml',
+    image: 'images/abenteuer-bundle.jpg',
+  },
+  {
+    id: 'alltag-bundle',
+    name: 'デイリーセット（弁当箱＋スポーツボトル）',
+    subtitle: '毎日の完璧な組み合わせ',
+    price: '¥6,470',
+    originalPrice: '¥8,240',
+    category: ['bundle'],
+    sizes: '弁当箱1400ml + スポーツボトル350ml',
+    image: 'images/alltag-bundle.jpg',
+  },
+  {
+    id: 'freizeit-bundle',
+    name: 'レジャーセット（サーモ容器＋スポーツボトル）',
+    subtitle: '温かいランチを持ち運び',
+    price: '¥6,470',
+    originalPrice: '¥8,090',
+    category: ['bundle'],
+    sizes: 'サーモ容器1000ml + スポーツボトル1000ml',
+    image: 'images/freizeit-bundle.jpg',
+  },
+  {
+    id: 'foodie-bundle',
+    name: 'フーディーセット（弁当箱＋サーモ容器）',
+    subtitle: '長い一日にぴったりの装備',
+    price: '¥6,840',
+    originalPrice: '¥8,550',
+    category: ['bundle'],
+    sizes: '弁当箱800ml + サーモ容器1000ml',
+    image: 'images/foodie-bundle.jpg',
+  },
+  {
+    id: 'lunch-bundle',
+    name: 'ランチセット（サーモ容器＋ボトル）',
+    subtitle: 'ランチタイムの完璧なお供',
+    price: '¥6,350',
+    originalPrice: '¥7,480',
+    category: ['bundle'],
+    sizes: 'サーモ容器1000ml + ボトル1000ml',
+    image: 'images/lunch-bundle.jpg',
+  },
+
+  // ===== THERMO =====
+  {
+    id: 'thermobehaelter-farbig',
+    name: 'カラー ステンレス サーモ容器',
+    subtitle: 'レンジなしで温かいランチを — カラフルに新登場',
+    price: '¥3,670',
+    originalPrice: '¥4,430',
+    category: ['thermo'],
+    sizes: '530ml / 700ml / 1000ml',
+    image: 'images/thermobehaelter-farbig.jpg',
+  },
+  {
+    id: 'thermo-lunchbox',
+    name: 'ステンレス サーモランチボックス',
+    subtitle: '真空バルブ付き保温容器',
+    price: '¥4,280',
+    originalPrice: '¥4,430',
+    category: ['thermo'],
+    sizes: '1000ml',
+    image: 'images/thermo-lunchbox.jpg',
+  },
+
+  // ===== ENGRAVING / GRAVUR =====
+  {
+    id: 'gravur-brotdose',
+    name: 'プレミアム弁当箱 ＋ 名入れ刻印',
+    subtitle: 'あなたの弁当箱に刻む',
+    price: '¥5,320',
+    originalPrice: '¥5,500',
+    category: ['engraving'],
+    sizes: '800ml / 1200ml / 1400ml',
+    image: 'images/gravur-brotdose.jpg',
+  },
+  {
+    id: 'gravur-trinkflasche',
+    name: 'プレミアムボトル ＋ 名入れ刻印',
+    subtitle: '手作りのプレゼントが一番素敵！',
+    price: '¥4,050',
+    originalPrice: '¥4,880',
+    category: ['engraving'],
+    sizes: '500ml / 750ml / 1000ml',
+    image: 'images/gravur-trinkflasche.jpg',
+  },
+  {
+    id: 'gravur-sport-trinkflasche',
+    name: 'スポーツボトル ＋ 名入れ刻印',
+    subtitle: 'いつでも見つかる、あなただけのボトル！',
+    price: '¥4,910',
+    originalPrice: '¥5,650',
+    category: ['engraving'],
+    sizes: '500ml / 750ml / 1000ml',
+    image: 'images/gravur-sport.jpg',
+  },
+  {
+    id: 'gravur-thermobehaelter',
+    name: 'サーモ容器 ＋ 名入れ刻印',
+    subtitle: '最高のプレゼント — パーソナルに',
+    price: '¥5,450',
+    originalPrice: '¥5,800',
+    category: ['engraving'],
+    sizes: '530ml / 700ml / 1000ml',
+    image: 'images/gravur-thermo.jpg',
+  },
+
+  // ===== ADDITIONAL BOTTLE =====
+  {
+    id: 'trinkflasche-isoliert-2',
+    name: 'プレミアム ステンレスボトル',
+    subtitle: 'アイスコールドのリフレッシュ',
+    price: '¥3,290',
+    originalPrice: '¥3,510',
+    category: ['bottle'],
+    sizes: '500ml / 750ml / 1000ml',
+    image: 'images/trinkflasche-2.jpg',
+  },
+];
+
+// ===== RENDER PRODUCTS =====
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('product-grid');
+  const filtered = filter === 'all' 
+    ? PRODUCTS 
+    : PRODUCTS.filter(p => p.category.includes(filter));
+  
+  grid.innerHTML = filtered.map(product => `
+    <div class="product-card" data-categories="${product.category.join(',')}">
+      <div class="product-image">
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        <div class="badge-sold-out">売り切れ</div>
+        ${product.originalPrice ? '<div class="badge-sale">SALE</div>' : ''}
+      </div>
+      <div class="product-info">
+        <h3>${product.name}</h3>
+        <div class="subtitle">${product.subtitle}</div>
+        <div class="product-prices">
+          <span class="price-current">${product.price}</span>
+          ${product.originalPrice ? `<span class="price-original">${product.originalPrice}</span>` : ''}
+        </div>
+        <div class="product-sizes">${product.sizes}</div>
+        <button class="sold-out-btn">売り切れ</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(category, el) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderProducts(category);
+}
+
+// Initial render
+renderProducts();
+</script>
+
+</body>
+</html>
